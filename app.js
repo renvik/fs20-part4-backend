@@ -9,13 +9,16 @@ const middleware = require('./utils/middleware')
 const logger = require('./utils/logger')
 const mongoose = require('mongoose')
 
+// logger.info('connecting to')
 logger.info('connecting to', config.MONGODB_URI)
 
-const url = process.env.MONGODB_URI 
-//console.log("connecting to database ")
-// removed url because it shows database's password console.log("connecting to database ", url)
-
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
+mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    logger.info('connected to MongoDB')
+  })
+  .catch((error) => {
+    logger.error('error connection to MongoDB:', error.message)
+  })
 
 const blogSchema = mongoose.Schema({
   title: String,
@@ -25,12 +28,16 @@ const blogSchema = mongoose.Schema({
 })
 
 //const Blog = mongoose.model('Blog', blogSchema)
-
+//console.log('käykö täällä') 
+app.use('api/blogs', blogsRouter)
+console.log('käykö täällä') 
 app.use(cors())
 app.use(express.json())
+app.use(middleware.unknownEndpoint)
+app.use(middleware.errorHandler)
 
 
-const PORT = process.env.PORT
+//const PORT = process.env.PORT
 
 // app.listen(PORT, () => {
 //   console.log(`Server running on port ${PORT}`)

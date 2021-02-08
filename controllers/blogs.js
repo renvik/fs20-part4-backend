@@ -4,7 +4,8 @@ const blogsRouter = require('express').Router()
 const Blog = require('../models/blog')
 
 blogsRouter.get('/', (request, response) => {
-    Blog.find({}).then(blogs => {
+  console.log('käykö täällä') 
+  Blog.find({}).then(blogs => {
       response.json(blogs.map(blog => blog.toJSON()))
       })
   })
