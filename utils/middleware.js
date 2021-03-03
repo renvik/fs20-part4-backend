@@ -1,5 +1,5 @@
 const logger = require('./logger')
-// requestLogger prints info about requests to console:
+// requestLogger prints requests to console:
 const requestLogger = (request, response, next) => {
   logger.info('Method:', request.method)
   logger.info('Path:  ', request.path)
