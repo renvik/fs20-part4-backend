@@ -21,7 +21,7 @@ blogsRouter.post('/', async (request, response) => {
 })
 // route that enables deleting a blog
 blogsRouter.delete('/:id', async (request, response) => {
-  // response consists of all the info that the request has, for instance idcreates id variable which consists of
+  // response consists of all the info that the request has, for instance creates id variable which consists of
   // uses mongooses model and findByIdAndDelete-function
   await Blog.findByIdAndDelete(request.params.id)
   // response is how the request is responded (both succesfully deleted and failed):. In theory response's object status-method sends code 204

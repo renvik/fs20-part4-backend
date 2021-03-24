@@ -66,6 +66,7 @@ test('blog without title and url causes 400 error', async () => {
     .expect(400)
 })
 
+
 afterAll(() => {
   mongoose.connection.close()
 })
