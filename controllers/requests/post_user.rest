@@ -1,0 +1,6 @@
+POST http://localhost:3001/api/users/
+{
+    "username": "johnnyboy",
+    "name": "John Smith",
+    "password": "duplicate"
+}
