@@ -1,6 +1,8 @@
-POST http://localhost:3001/api/users/
+POST http://localhost:3001/api/users/registration/
+
 {
-    "username": "johnnyboy",
+    "blogs": [],
+    "username": "banana",
     "name": "John Smith",
     "password": "duplicate"
 }

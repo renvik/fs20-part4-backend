@@ -52,12 +52,13 @@ describe('when there is initially one user at db', () => {
       .expect(400)
       .expect('Content-Type', /application\/json/)
 
-    expect(result.body.error).toContain('`username` to be unique')
-    //console.log(result.body.error)
+    expect(result.body.error).toContain('invalid user information to register')
+
     const usersAtEnd = await helper.usersInDb()
     expect(usersAtEnd).toHaveLength(usersAtStart.length)
   })
 })
+
 // ends db-connection:
 afterAll(() => {
   mongoose.connection.close()
