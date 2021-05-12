@@ -15,7 +15,7 @@ usersRouter.post('/', async (request, response) => {
   response.status(200).json({ info: 'welcome!' })
 })
 
-// user registration -route, http://localhost:3001/api/users/registration/
+// user registration -route (ie. user creates an acoount), http://localhost:3001/api/users/registration/
 usersRouter.post('/registration', async (request, response, next) => {
   try {
 

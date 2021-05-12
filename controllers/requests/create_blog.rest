@@ -1,0 +1,11 @@
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndpbHNvbiIsImlkIjoiNjA5YjliODlkMTJjMzc2M2QyZDAxOGQwIiwiaWF0IjoxNjIwODEwOTUyfQ.b4s2cC-U63yb5DT6KpO9xyd_CxujRdUXexVPmsoQL9U
+
+{
+    "title": "Kevin's revenge!",
+    "author": "KW",
+    "url": "http://www.thisiskevin.com",
+    "likes": "72",
+    "_id": "352385386"
+}

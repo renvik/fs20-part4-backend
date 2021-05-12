@@ -1,4 +1,4 @@
-// index.js import the app from app.,js and launches it const server
+// index.js imports the app from app.js and launches it const server
 const app = require('./app')
 const http = require('http')
 const config = require('./utils/config')
