@@ -1,11 +1,11 @@
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndpbHNvbiIsImlkIjoiNjA5YjliODlkMTJjMzc2M2QyZDAxOGQwIiwiaWF0IjoxNjIwODEwOTUyfQ.b4s2cC-U63yb5DT6KpO9xyd_CxujRdUXexVPmsoQL9U
+Authorization: bearer bGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndpbHNvbiIsImlkIjoiNjA5YjliODlkMTJjMzc2M2QyZDAxOGQwIiwiaWF0IjoxNjIwODEwOTUyfQ.b4s2cC-U63yb5DT6KpO9xyd_CxujRdUXexVPmsoQL9U
 
 {
-    "title": "Kevin's revenge!",
+    "title": "Kevin's world!",
     "author": "KW",
-    "url": "http://www.thisiskevin.com",
-    "likes": "72",
+    "url": "http://www.kevinsworld.com",
+    "likes": "120",
     "_id": "352385386"
 }

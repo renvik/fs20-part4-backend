@@ -17,10 +17,12 @@ blogsRouter.post('/', async (request, response) => {
   const body = request.body
   // token verification and decode (returns decoded object)
   const decodedToken = jwt.verify(request.token, process.env.SECRET)
+
   if (!request.token || !decodedToken.id) {
     return response.status(401).json({ error: 'token missing or invalid' })
   }
-  const user = await User.findById(decodedToken.id)
+  //const user = await User.findById(decodedToken.id)
+  const user = request.user
 
   const blog = new Blog({
     title: body.title,
@@ -30,6 +32,7 @@ blogsRouter.post('/', async (request, response) => {
     user: user._id
   })
   const savedBlog = await blog.save()
+  // cannot read property 'concat' of undefined
   user.blogs = user.blogs.concat(savedBlog._id)
   await user.save()
 
@@ -44,7 +47,8 @@ blogsRouter.delete('/:id', async (request, response) => {
   if (!request.token || !decodedToken.id) {
     return response.status(401).end()
   }
-
+  const user = request.user
+  //const user = await User.findById(decodedToken.id)
   const blog = await Blog.findById(request.params.id)
 
   if (blog.user.toString() === decodedToken.id.toString()) {
