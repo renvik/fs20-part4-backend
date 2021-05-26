@@ -1,5 +1,4 @@
 // place for routes, blogsRouter (a router object) exports router, all routes are connected to the blogsRouter-object
-
 const blogsRouter = require('express').Router()
 const Blog = require('../models/blog')
 const User = require('../models/user')
@@ -32,7 +31,6 @@ blogsRouter.post('/', async (request, response) => {
     user: user._id
   })
   const savedBlog = await blog.save()
-  // cannot read property 'concat' of undefined
   user.blogs = user.blogs.concat(savedBlog._id)
   await user.save()
 

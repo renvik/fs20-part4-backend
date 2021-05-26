@@ -20,7 +20,6 @@ usersRouter.post('/registration', async (request, response, next) => {
   try {
 
     const body = request.body
-    
     const saltRounds = 10
     if(body.password.length < 3){
       return response.status(400).json({ error: 'invalid user information to register' })
