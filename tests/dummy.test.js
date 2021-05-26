@@ -5,7 +5,6 @@ test('dummy returns one', () => {
   const blogs = []
 
   const result = listHelper.dummy(blogs)
-  //jest-method "expect" wraps value to object and then uses matcher toBe
-  //defines the expected result of the test
+  //jest-method "expect" wraps value to object and then uses matcher toBe and defines the expected result of the test
   expect(result).toBe(1)
 })
